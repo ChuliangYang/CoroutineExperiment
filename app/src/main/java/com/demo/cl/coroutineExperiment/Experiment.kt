@@ -66,39 +66,6 @@ suspend fun main() {
 }
 
 
-//    val handler = CoroutineExceptionHandler { _, exception ->
-//        println("Caught $exception")
-//    }
-//    val job = GlobalScope.launch(handler) {
-//        launch(CoroutineExceptionHandler { coroutineContext, throwable ->
-//            println("Caught1 $throwable")
-//        }) { // the first child
-//           kotlinx.coroutines.delay(500)
-//            throw ArrayIndexOutOfBoundsException()
-//        }
-//        launch(CoroutineExceptionHandler { coroutineContext, throwable ->
-//            println("Caught2 $throwable")
-//        }) { // the second child
-//            try {
-//                kotlinx.coroutines.delay(5000)
-//                println("1")
-//            }catch (e: Exception){
-//                println("Caught2 $e")
-//            }
-//
-//        }
-//
-//        supervisorScope{
-//
-//            launch(CoroutineExceptionHandler { coroutineContext, throwable ->
-//                println("Caught2 $throwable")
-//            }) { // the first child
-//                kotlinx.coroutines.delay(1000)
-//                throw ArrayIndexOutOfBoundsException()
-//            }
-//        }
-//    }.join()
-
 
 class MyContinuationInterceptor : ContinuationInterceptor {
     override val key = ContinuationInterceptor
